@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0f172a;
+  --color-foreground: #f8fafc;
+
+  --color-primary: #06b6d4;
+  --color-primary-hover: #22d3ee;
+
+  --color-secondary: #94a3b8;
+
+  --color-accent: #8b5cf6;
+  --color-accent-hover: #a78bfa;
+
+  --color-surface: rgba(30, 41, 59, 0.7);
+  --color-surface-hover: rgba(51, 65, 85, 0.8);
+  --color-surface-active: rgba(71, 85, 105, 0.9);
+
+  --color-success: #10b981;
+  --color-error: #ef4444;
+
+  --color-border: rgba(148, 163, 184, 0.1);
+
+  --animate-fade-in: fade-in 0.5s ease-out;
+  --animate-slide-up: slide-up 0.5s ease-out;
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-up {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .btn {
+    @apply px-6 py-3 rounded-xl font-semibold transition-all duration-300 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:brightness-110;
+  }
+
+  .btn-secondary {
+    @apply bg-surface border border-border hover:bg-surface-hover text-foreground backdrop-blur-md;
+  }
+
+  .btn-ghost {
+    @apply text-secondary hover:text-foreground hover:bg-white/5;
+  }
+
+  .card {
+    @apply bg-surface backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-xl;
+  }
+
+  .input {
+    @apply w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-foreground placeholder-secondary focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all;
+  }
+}
+
+/* Global Styles */
+body {
+  @apply bg-background text-foreground min-h-screen font-sans antialiased;
+  background: radial-gradient(circle at top left, #1e1b4b, #0f172a);
+}
+
+/* Utility classes for layout */
+.container {
+  @apply max-w-4xl mx-auto p-8 min-h-screen flex flex-col;
+}
+
+h1 {
+  @apply text-4xl font-bold mb-4 tracking-tight;
+}
+
+h2 {
+  @apply text-3xl font-bold mb-4 tracking-tight;
+}
+
+h3 {
+  @apply text-2xl font-bold mb-4;
+}
+
+h4 {
+  @apply text-xl font-bold mb-4;
+}
+
+.text-secondary {
+  @apply text-slate-400;
+}
