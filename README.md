@@ -28,7 +28,7 @@
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/sensei.git
+   git clone https://github.com/RealHacker/sensei.git
    cd sensei
    ```
 
